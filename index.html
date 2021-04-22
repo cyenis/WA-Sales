@@ -163,9 +163,11 @@
             <h1>Holded Sales welcome </h1>
 
             <form class="form">
-                <input required id="message" type="text" placeholder="Enter a message">
-                <input required id="phone" type="text" placeholder="Enter a phone number">
-                <input required id="email" type="text" placeholder="Enter a email">
+                <input autocomplete="false" required id="message" type="text" placeholder="Enter a message" value="¡Hola soy Elena de Holded! Hemos visto que te has creado una cuenta de prueba en Holded! Si tienes alguna duda sobre sus funcionalidades para poder comenzar a probar la plataforma no dudes en decírnoslo y nos pondremos en contacto contigo para guiarte.
+                ">
+                <input autocomplete="false" required id="prefix" type="text" placeholder="Enter a country code" value="+34">
+                <input autocomplete="false" required id="phone" type="text" placeholder="Enter a phone number">
+                <input autocomplete="false" required id="email" type="text" placeholder="Enter a email">
                 <input type="button" name="gowa" id="btngo" onclick="getWAlink()" value="Send!">
             </form>
         </div>
@@ -176,8 +178,8 @@
     <script>
         const getWAlink = () => {
             let val = id => document.querySelector(id).value
-            console.log('https://wa.me/' + val('#phone') + '?text=' + val('#message'))
-            let wurl = 'https://wa.me/' + val('#phone') + '?text=' + val('#message')
+            console.log('https://wa.me/' + val('#prefix')+ val('#phone') + '?text=' + val('#message'))
+            let wurl = 'https://wa.me/'+ val('#prefix') + val('#phone') + '?text=' + val('#message')
             window.open(wurl, '_blank');
 
         }
@@ -187,9 +189,10 @@
     </script>
 
 
-<!-- Start of holded Zendesk Widget script -->
-<script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=676dd2ed-9816-4ed0-87cd-c996866ab3ee"> </script>
-<!-- End of holded Zendesk Widget script -->
+    <!-- Start of holded Zendesk Widget script -->
+    <script id="ze-snippet"
+        src="https://static.zdassets.com/ekr/snippet.js?key=676dd2ed-9816-4ed0-87cd-c996866ab3ee"> </script>
+    <!-- End of holded Zendesk Widget script -->
 </body>
 
 </html>
