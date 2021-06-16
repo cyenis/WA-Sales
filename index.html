@@ -52,7 +52,8 @@
     <script>
         const getWAlink = () => {
             let val = id => document.querySelector(id).value
-            let wurl = 'https://wa.me/' + val('#prefix') + val('#phone') + '?text=' + val('#message')
+            let wurl = 'https://wa.me/' + val('#prefix') + (val('#phone').replace(/\s+/g, '')) + '?text=' + val('#message')
+            console.log(wurl)
             window.open(wurl, '_blank');
 
         }
